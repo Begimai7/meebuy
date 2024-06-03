@@ -56,49 +56,46 @@
   <section class="mt-10 lg:mt-[70px] mb-24">
     <div class="container">
       <!-- filters -->
-      <div class="flex gap-4 lg:gap-5">
+      <div
+        class="flex gap-6 lg-md: items-center md:my-10 md: mb-5 lg-md: mt-10"
+      >
         <!-- filter -->
         <div
           id="filterContainer"
-          class="relative cursor-pointer flex z-50 shadow-card-shadow items-center rounded-[15px] py-3 px-6"
+          class="relative cursor-pointer z-50 shadow-card-shadow rounded-[15px] py-3 px-6"
         >
-          Фильтр
-          <img
-            class="ml-2"
-            src="{% static 'assets/images/suppliers/suppliers/icons/filter.svg' %}"
-            alt=""
-          />
+          <div class="flex items-center gap-4">
+            Фильтр
+            <img
+              src="{% static 'assets/images/suppliers/suppliers/icons/filter.svg' %}"
+              alt=""
+            />
+          </div>
+          <!-- filter modal-->
           <div id="openFilter" style="display: none" class="filter-container">
             <div
-              class="absolute z-50 left-0 top-[50px] flex flex-col gap-8 items-center bg-[#fff] rounded-[15px] p-5 sm:w-[408px] w-[318px]"
+              class="absolute z-50 left-0 top-[60px] flex flex-col gap-8 bg-[#fff] rounded-[15px] py-6 sm:px-8 px-4 sm:w-[408px] w-auto"
             >
-              <form
-                method="get"
-                action="{% url 'product_list' %}"
-                id="products_filter"
-              >
-                <div class="flex flex-col gap-4">
-                  <p class="text-[#2B292C] font-bold text-[18px]">Цена</p>
-                  <div class="flex items-center gap-5">
+              <form method="get" type="submit" action="{% url 'tender_list' %}">
+                <div class="flex flex-col gap-4 w-full">
+                  <h2 class="text-[#2B292C] text-[18px] font-bold">Цена</h2>
+                  <div class="flex items-center sm:gap-5 gap-2">
                     <input
-                      class="border border-[#E6E6E6] rounded-2xl py-3 pl-4 w-[154px]"
-                      placeholder="От"
-                      name="price_min"
+                      class="text-[#737373] w-full text-[16px] font-light bg-[#F9F9F9] border border-[#E6E6E6] pl-5 py-3 rounded-2xl"
                       type="text"
+                      placeholder="Страна"
                     />
                     <input
-                      class="border border-[#E6E6E6] rounded-2xl py-3 pl-4"
-                      placeholder="До"
-                      name="price_max"
+                      class="text-[#737373] w-full text-[16px] font-light bg-[#F9F9F9] border border-[#E6E6E6] pl-5 py-3 rounded-2xl"
                       type="text"
+                      placeholder="Город"
                     />
                   </div>
                 </div>
                 <button
-                  form="products_filter"
                   id="filterBtn"
                   type="submit"
-                  class="bg-[#E4DB00] rounded-[7px] mt-6 py-2 px-16 text-[#2B292C] text-[16px] font-mulish mb-7"
+                  class="bg-[#E4DB00] w-full rounded-[7px] mt-6 py-2 px-16 text-[#2B292C] text-[16px] font-mulish mb-7"
                 >
                   Применить
                 </button>

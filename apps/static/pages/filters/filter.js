@@ -68,8 +68,16 @@ const openFilter = document.getElementById("openFilter");
 const filterBtn = document.getElementById("filterBtn");
 
 const toggleFilterModal = () => {
-  openFilter.style.display =
-    openFilter.style.display === "none" ? "block" : "none";
+  if ((selectModal.style.display = "block")) {
+    openFilter.style.display =
+      openFilter.style.display === "none" ? "block" : "none";
+    selectModal.style.display = "none";
+    openIcon.style.display = "block";
+    closeIconn.style.display = "none";
+  } else {
+    openFilter.style.display =
+      openFilter.style.display === "none" ? "block" : "none";
+  }
 };
 
 const toggleCloseFilterModal = (event) => {
